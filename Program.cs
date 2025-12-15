@@ -13,7 +13,7 @@ builder.Services.AddAuthModule(builder.Configuration);
 // Swagger
 builder.Services.AddSwaggerGen(static c =>
 {
-  c.SwaggerDoc("v1", new OpenApiInfo { Title = "🫦 Pedeai API - Versão 1", Version = "v1" });
+  c.SwaggerDoc("v1", new OpenApiInfo { Title = "🍔 Pedeai API", Version = "v1" });
 
   c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
   {
@@ -48,7 +48,7 @@ if (app.Environment.IsDevelopment())
   app.UseSwagger();
   app.UseSwaggerUI(options =>
   {
-    options.SwaggerEndpoint("/swagger/v1/swagger.json", "Pedeai API 🫦");
+    options.SwaggerEndpoint("/swagger/v1/swagger.json", "🍔 Pedeai API");
   });
 }
 
