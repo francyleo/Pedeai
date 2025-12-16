@@ -1,4 +1,3 @@
-using Microsoft.EntityFrameworkCore;
 using Pedeai.App.Auth.Commands;
 using Pedeai.App.Auth.Repos;
 using Pedeai.App.Auth.Services;
@@ -22,6 +21,7 @@ namespace Pedeai.App.Auth
       // Command Handlers
       services.AddScoped<LoginCommandHandler>();
       services.AddScoped<RegisterCommandHandler>();
+      services.AddScoped<MeCommandHandler>();
 
       return services;
     }
