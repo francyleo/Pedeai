@@ -1,19 +1,18 @@
-using System.Diagnostics;
-using Microsoft.AspNetCore.Diagnostics;
 using Pedeai.App.Auth.Exceptions;
 using Pedeai.App.Auth.Repos;
 using Pedeai.App.Auth.Services;
+using Pedeai.App.Shared.Interfaces;
 
 namespace Pedeai.App.Auth.Commands
 {
   public class LoginCommandHandler(
     IUserRepository userRepository,
     ITokenService tokenService
-  ) {
+  ) : ICommandHandler<LoginCommand, LoginResult>{
     private readonly IUserRepository _userRepository = userRepository;
     private readonly ITokenService _tokenService = tokenService;
 
-    public async Task<LoginResult> Execute(LoginCommand command)
+    public async Task<LoginResult> ExecuteAsync(LoginCommand command)
     {
       var user = await _userRepository.GetByEmailAsync(command.Email);
 
