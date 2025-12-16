@@ -32,6 +32,9 @@ namespace Pedeai.App.Auth.Infra.Persistence.Configurations
 
       builder.Property(user => user.UpdatedAt)
         .IsRequired();
+
+      builder.Property(user => user.DeletedAt)
+        .IsRequired(false);
     }
   }
 }

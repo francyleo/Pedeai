@@ -11,5 +11,6 @@ namespace Pedeai.App.Auth.Entities
     public string Password { get; private set; } = password;
     public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; private set; } = DateTime.UtcNow;
+    public DateTime? DeletedAt { get; private set; }
   }
 }
