@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Pedeai.App.Auth.Repos;
-using Pedeai.Auth.Domains.Entities;
-using Pedeai.Auth.Infra.Persistence;
+using Pedeai.App.Auth.Infra.Persistence;  
+using Pedeai.App.Auth.Domains;
 
 namespace Pedeai.App.Auth.Infra.Repos
 {

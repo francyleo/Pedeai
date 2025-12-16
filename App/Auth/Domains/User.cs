@@ -1,7 +1,10 @@
-namespace Pedeai.Auth.Domains.Entities
+namespace Pedeai.App.Auth.Domains
 {  
-  public sealed class User(string name, string email, string password)
-  {
+  public sealed class User(
+    string name,
+    string email,
+    string password
+    ) {
     public Guid Id { get; init; } = Guid.NewGuid();
     public string Name { get; private set; } = name;
     public string Email { get; private set; } = email;

@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore;
-using Pedeai.Auth.Domains.Entities;
+using Pedeai.App.Auth.Domains;
 
-namespace Pedeai.Auth.Infra.Persistence
+namespace Pedeai.App.Auth.Infra.Persistence
 {
   public class AuthDbContext : DbContext
   {
