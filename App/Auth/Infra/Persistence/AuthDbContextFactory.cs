@@ -1,8 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Pedeai.App.Auth.Infra.Persistence;
 
-namespace Pedeai.Auth.Infra.Persistence
+namespace Pedeai.App.Auth.Infra.Persistence
 {
   public class AuthDbContextFactory : IDesignTimeDbContextFactory<AuthDbContext>
   {
