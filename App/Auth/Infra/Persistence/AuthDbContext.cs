@@ -5,7 +5,7 @@ namespace Pedeai.App.Auth.Infra.Persistence
 {
   public class AuthDbContext : DbContext
   {
-    public DbSet<User> Users => Set<User>();
+    public DbSet<UserEntity> Users => Set<UserEntity>();
 
     public AuthDbContext(DbContextOptions<AuthDbContext> options) : base(options) { }
 

@@ -4,7 +4,7 @@ namespace Pedeai.App.Auth.Repos
 {
   public interface IUserRepository
   {
-    public Task<User?> GetByEmailAsync(string email);
-    public Task AddAsync(User user);
+    public Task<UserEntity?> GetByEmailAsync(string email);
+    public Task AddAsync(UserEntity user);
   }
 }

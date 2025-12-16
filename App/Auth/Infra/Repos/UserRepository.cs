@@ -9,12 +9,12 @@ namespace Pedeai.App.Auth.Infra.Repos
   {
     private readonly AuthDbContext _dbContext = dbContext;
     
-    public Task<User?> GetByEmailAsync(string email)
+    public Task<UserEntity?> GetByEmailAsync(string email)
     {     
       return _dbContext.Users.FirstOrDefaultAsync(user => user.Email == email);
     }
 
-    public async Task AddAsync(User user)
+    public async Task AddAsync(UserEntity user)
     {
       await _dbContext.Users.AddAsync(user);
       await _dbContext.SaveChangesAsync();

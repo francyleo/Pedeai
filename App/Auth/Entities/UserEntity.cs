@@ -1,6 +1,6 @@
 namespace Pedeai.App.Auth.Entities
 {  
-  public sealed class User(
+  public sealed class UserEntity(
     string name,
     string email,
     string password

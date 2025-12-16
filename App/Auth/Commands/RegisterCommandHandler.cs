@@ -20,7 +20,7 @@ namespace Pedeai.App.Auth.Commands
       
       var hashedPassword = _hashService.Hash(command.Password);
 
-      var newUser = new User(
+      var newUser = new UserEntity(
         command.Name,
         command.Email,
         hashedPassword
