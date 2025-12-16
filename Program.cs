@@ -1,5 +1,6 @@
-using Microsoft.OpenApi.Models;
+using Pedeai.App.Shared;
 using Pedeai.App.Auth;
+using Pedeai.App.Catalog;
 
 var builder = WebApplication.CreateBuilder(args);
 
