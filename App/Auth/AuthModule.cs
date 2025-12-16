@@ -2,7 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Pedeai.App.Auth.Commands;
 using Pedeai.App.Auth.Repos;
 using Pedeai.App.Auth.Services;
-using Pedeai.Auth.Infra.Persistence;
+using Pedeai.App.Auth.Infra.Persistence;
 using Pedeai.App.Auth.Infra.Repos;
 using Pedeai.App.Auth.Infra.Services;
 

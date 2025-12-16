@@ -3,7 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Pedeai.Auth.Infra.Persistence;
+using Pedeai.App.Auth.Infra.Persistence;
 
 #nullable disable
 
