@@ -1,7 +1,7 @@
 using Pedeai.App.Auth.Exceptions;
 using Pedeai.App.Auth.Repos;
 using Pedeai.App.Auth.Services;
-using Pedeai.App.Auth.Domains;
+using Pedeai.App.Auth.Entities;
 
 namespace Pedeai.App.Auth.Commands
 {

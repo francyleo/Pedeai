@@ -1,4 +1,4 @@
-namespace Pedeai.App.Auth.Domains
+namespace Pedeai.App.Auth.Entities
 {  
   public sealed class User(
     string name,
@@ -9,7 +9,7 @@ namespace Pedeai.App.Auth.Domains
     public string Name { get; private set; } = name;
     public string Email { get; private set; } = email;
     public string Password { get; private set; } = password;
-    public DateTime CreatedAt { get; private set; } = DateTime.UtcNow;
+    public DateTime CreatedAt { get; init; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; private set; } = DateTime.UtcNow;
   }
 }
