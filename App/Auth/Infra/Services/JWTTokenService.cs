@@ -1,6 +1,8 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Pedeai.App.Auth.Services;
 
 namespace Pedeai.App.Auth.Infra.Services
@@ -18,18 +20,18 @@ namespace Pedeai.App.Auth.Infra.Services
     {
       var claims = new[]
       {
-        new Claim("id", userId.ToString()),
-        new Claim("email", userEmail)
-      };
+        new Claim(ClaimTypes.NameIdentifier, userId.ToString()),
+        new Claim(ClaimTypes.Email, userEmail)
+      };      
 
-      // TODO: Implement token signing and expiration
-      // var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.Secret));
-      // var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+      var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_settings.SecretKey));
+      var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
       var token = new JwtSecurityToken(
+        claims: claims,
         issuer: _settings.Issuer,
         audience: _settings.Audience,
-        claims: claims,
+        signingCredentials: credentials,
         expires: DateTime.UtcNow.AddMinutes(_settings.ExpiryInMinutes)
       );
 

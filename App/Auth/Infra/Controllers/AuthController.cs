@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Pedeai.App.Auth.Commands;
 using Pedeai.App.Auth.Infra.Requests;
+using Microsoft.AspNetCore.Authorization;
 
 [ApiController]
 [Route("api/v1/auth")]
@@ -32,7 +33,19 @@ public class AuthController : ControllerBase
       body.Password
     );
 
-    var result = await handler.Execute(command);
+    var result = await handler.ExecuteAsync(command);
+
+    return Ok(result);
+  }
+
+  [Authorize]
+  [HttpPost("me")]
+  public async Task<IActionResult> GetMe([FromServices] MeCommandHandler handler) {
+    var userId = User.GetUserId();
+
+    var command = new MeCommand(userId);
+
+    var result = await handler.ExecuteAsync(command);
 
     return Ok(result);
   }
