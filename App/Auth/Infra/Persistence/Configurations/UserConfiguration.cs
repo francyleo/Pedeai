@@ -1,6 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Pedeai.Auth.Domain.Entities;
+using Pedeai.Auth.Domains.Entities;
 
 namespace Pedeai.Auth.Infra.Persistence.Configurations
 {  

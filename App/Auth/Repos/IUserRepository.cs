@@ -1,4 +1,4 @@
-using Pedeai.Auth.Domain.Entities;
+using Pedeai.Auth.Domains.Entities;
 
 namespace Pedeai.App.Auth.Repos
 {

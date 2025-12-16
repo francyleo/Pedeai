@@ -1,5 +1,5 @@
 using Microsoft.EntityFrameworkCore;
-using Pedeai.Auth.Domain.Entities;
+using Pedeai.Auth.Domains.Entities;
 
 namespace Pedeai.Auth.Infra.Persistence
 {

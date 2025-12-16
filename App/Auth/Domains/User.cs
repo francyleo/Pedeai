@@ -1,4 +1,4 @@
-namespace Pedeai.Auth.Domain.Entities
+namespace Pedeai.Auth.Domains.Entities
 {  
   public sealed class User(string name, string email, string password)
   {
