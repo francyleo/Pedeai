@@ -86,6 +86,11 @@ dotnet run
 
 O servidor estará rodando em `https://localhost:5205`.
 
+## 🗂️ Arquitetura do Banco
+
+[Link para o Lucidchart com o MER](https://lucid.app/lucidspark/dd1ccfb5-25e6-4f8d-a937-330f356ddb33/edit?view_items=unkgSUEYL2V6&page=0_0&invitationId=inv_ef198246-d07b-42ee-aa53-b896304dceef)
+
+
 ## 📜 Documentação da API
 
 A documentação interativa da API está disponível em `https://localhost:5205/swagger`.
