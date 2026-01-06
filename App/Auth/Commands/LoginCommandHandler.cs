@@ -1,6 +1,6 @@
-using Pedeai.App.Auth.Exceptions;
 using Pedeai.App.Auth.Repos;
 using Pedeai.App.Auth.Services;
+using Pedeai.App.Shared.Exceptions;
 using Pedeai.App.Shared.Interfaces;
 
 namespace Pedeai.App.Auth.Commands
@@ -8,7 +8,7 @@ namespace Pedeai.App.Auth.Commands
   public class LoginCommandHandler(
     IUserRepository userRepository,
     ITokenService tokenService
-  ) : ICommandHandler<LoginCommand, LoginResult>{
+  ) : ICommandHandler<LoginCommand, LoginResult> {
     private readonly IUserRepository _userRepository = userRepository;
     private readonly ITokenService _tokenService = tokenService;
 

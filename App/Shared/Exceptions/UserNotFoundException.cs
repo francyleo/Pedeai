@@ -1,4 +1,4 @@
-namespace Pedeai.App.Auth.Exceptions
+namespace Pedeai.App.Shared.Exceptions
 {
   public class UserNotFoundException : Exception
   {
