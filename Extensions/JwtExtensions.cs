@@ -2,28 +2,25 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Pedeai.App.Shared
+public static class JwtExtensions
 {
-  public static class JwtExtensions
+  public static IServiceCollection AddJwtMiddleware(this IServiceCollection services, IConfiguration configuration)
   {
-    public static IServiceCollection AddJwtMiddleware(this IServiceCollection services, IConfiguration configuration)
-    {
-      services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)      
-        .AddJwtBearer(options =>
+    services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)      
+      .AddJwtBearer(options =>
+      {
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-          options.TokenValidationParameters = new TokenValidationParameters
-          {
-            ValidateIssuer = true,
-            ValidateAudience = true,
-            ValidateLifetime = true,
-            ValidateIssuerSigningKey = true,
-            ValidIssuer = configuration["Jwt:Issuer"],
-            ValidAudience = configuration["Jwt:Audience"],
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]!))
-          };
-        });
+          ValidateIssuer = true,
+          ValidateAudience = true,
+          ValidateLifetime = true,
+          ValidateIssuerSigningKey = true,
+          ValidIssuer = configuration["Jwt:Issuer"],
+          ValidAudience = configuration["Jwt:Audience"],
+          IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["Jwt:SecretKey"]!))
+        };
+      });
 
-      return services;
-    }
-  }  
-}
+    return services;
+  }
+}  
